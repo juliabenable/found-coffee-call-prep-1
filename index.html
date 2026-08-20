@@ -71,8 +71,6 @@
 
   section{margin-top:44px; animation:rise .5s ease both;}
   section:nth-of-type(2){animation-delay:.06s}
-  section:nth-of-type(3){animation-delay:.12s}
-  section:nth-of-type(4){animation-delay:.18s}
   @keyframes rise{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
   @media (prefers-reduced-motion: reduce){ section{animation:none} }
 
@@ -80,6 +78,11 @@
     display:flex; align-items:baseline; gap:10px;}
   h2 .no{font-size:13px; font-family:var(--sans); font-weight:700; color:var(--accent); letter-spacing:.08em;}
   .sub{font-size:13.5px; color:var(--muted); margin:0 0 16px; max-width:64ch;}
+
+  h3.group{font-family:var(--sans); font-size:12px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--accent-deep); margin:28px 0 10px; display:flex; align-items:center; gap:10px;}
+  h3.group::after{content:""; flex:1; height:1px; background:var(--line2);}
+  h3.group:first-of-type{margin-top:18px;}
 
   /* don't re-ask panel */
   .panel{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px 20px 8px;}
@@ -127,6 +130,7 @@
     .progress{display:none}
     .q{box-shadow:none; break-inside:avoid; padding:8px 12px; margin-bottom:6px;}
     section{margin-top:22px; animation:none;}
+    h3.group{margin:14px 0 6px;}
     header{padding-bottom:12px;}
   }
 </style>
@@ -175,80 +179,115 @@
 </section>
 
 <section>
-  <h2><span class="no">02</span> The six core questions</h2>
-  <p class="sub">Reused from the Blow Me Away onboarding — they worked. Adapted for coffee.</p>
+  <h2><span class="no">02</span> The question flow</h2>
+  <p class="sub">Katie’s structure (Aug 20) merged with the six from the Jul 28 salon list and the local-visit logistics.</p>
 
-  <div class="q"><label><input type="checkbox" data-k="q1"><span>
-    <span class="ask">1 · Past partnerships — <q>Have you worked with influencers before? What did that look like for you?</q></span>
-    <span class="why">She said solicitations come in and ROI never showed. Ask what she actually tried, so we know what “better” looks like to her.</span>
+  <h3 class="group">General intro</h3>
+
+  <div class="q"><label><input type="checkbox" data-k="g1"><span>
+    <span class="ask">Goals — <q>What are your goals for this campaign — foot traffic &amp; sales, brand awareness, or content you can repost?</q></span>
+    <span class="why">Katie’s three buckets: sales/conversions · awareness · content acquisition. She bought on content + reposting — listen for which she ranks first; it steers the brief.</span>
   </span></label></div>
 
-  <div class="q"><label><input type="checkbox" data-k="q2"><span>
-    <span class="ask">2 · Biggest pain — <q>What’s the biggest pain we can take off your plate?</q></span>
-    <span class="why">Salon answers were contracts, scheduling back-and-forth, chasing content.</span>
-  </span></label></div>
-
-  <div class="q"><label><input type="checkbox" data-k="q3"><span>
-    <span class="ask">3 · Creator openness — <q>Coffee &amp; food creators only, or lifestyle and neighborhood-discovery more generally? Walk me through everything you’d be open to.</q><span class="tag unblocks">unblocks matching</span></span>
-    <span class="why">Confirm the east-side / Eagle Rock lane + any no-gos. <b>This answer lets Katie send creators today.</b></span>
-  </span></label></div>
-
-  <div class="q"><label><input type="checkbox" data-k="q4"><span>
-    <span class="ask">4 · Success — recap what we heard, then: <q>Is there anything else that would make this a magic experience?</q></span>
+  <div class="q"><label><input type="checkbox" data-k="g2"><span>
+    <span class="ask">Success — <q>What does success look like when campaign one wraps?</q> Recap what we heard, then: <q>anything else that would make this a magic experience?</q></span>
     <span class="why">Recap in her words: repostable content, hours saved, relationships, always-on program.</span>
   </span></label></div>
 
-  <div class="q"><label><input type="checkbox" data-k="q5"><span>
-    <span class="ask">5 · Communication — <q>Would you rather get an email every time content posts, or batched updates?</q></span>
-    <span class="why">Salon chose quick/frequent at first. Also confirm: is <b>Annie</b> the portal contact, or someone else?</span>
+  <div class="q"><label><input type="checkbox" data-k="g3"><span>
+    <span class="ask">Past partnerships — <q>Have you worked with influencers before? What did that look like for you?</q></span>
+    <span class="why">She said solicitations come in and ROI never showed. Ask what she actually tried, so we know what “better” looks like to her.</span>
   </span></label></div>
 
-  <div class="q"><label><input type="checkbox" data-k="q6"><span>
-    <span class="ask">6 · Close — <q>Any questions for us?</q></span>
+  <div class="q"><label><input type="checkbox" data-k="g4"><span>
+    <span class="ask">Biggest pain — <q>What’s the biggest pain we can take off your plate?</q></span>
+    <span class="why">Salon answers were contracts, scheduling back-and-forth, chasing content.</span>
   </span></label></div>
-</section>
 
-<section>
-  <h2><span class="no">03</span> Local-experience logistics</h2>
-  <p class="sub">The coffee version of the salon questions — where local collabs actually hit friction.</p>
+  <h3 class="group">Matching</h3>
 
-  <div class="q"><label><input type="checkbox" data-k="l1"><span>
+  <div class="q"><label><input type="checkbox" data-k="m1"><span>
+    <span class="ask">Creator types — <q>Coffee &amp; food creators only, or lifestyle and neighborhood-discovery more generally? Any verticals you’d prefer — or avoid?</q><span class="tag unblocks">unblocks matching</span></span>
+    <span class="why">Confirm the east-side / Eagle Rock lane + no-gos. <b>This answer lets Katie send creators today.</b></span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="m2"><span>
+    <span class="ask">Content style — <q>What do you envision — aesthetic/pretty shots of the space, “come with me” voiceover, day-in-the-life lifestyle, straight UGC?</q></span>
+    <span class="why">Katie’s add. Calibrates both the brief and Logan’s matching pass.</span>
+  </span></label></div>
+
+  <h3 class="group">Brief &amp; content direction</h3>
+
+  <div class="q"><label><input type="checkbox" data-k="b1"><span>
+    <span class="ask">Anti-examples — <q>Can you share examples of content you didn’t like, and why?</q></span>
+    <span class="why">Katie’s add — the fastest brief calibration. She’s seen plenty of influencer content she didn’t rate; make her name what to avoid.</span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="b2"><span>
+    <span class="ask">Scheduling constraints — <q>Weekdays only? Avoid the morning rush? Any back-to-school blackout weeks?</q></span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="b3"><span>
+    <span class="ask">Filming rules — behind the counter OK? Staff on camera? Anything not to show?</span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="b4"><span>
+    <span class="ask">Posting spec — IG/TikTok, tag + geo-tag the shop, and the Paid Partnership label.<span class="tag compliance">required even for gifted</span></span>
+  </span></label></div>
+
+  <h3 class="group">Visit &amp; gifting setup</h3>
+
+  <div class="q"><label><input type="checkbox" data-k="v1"><span>
     <span class="ask">Visit mechanics — walk in and mention Benable, or book a slot? Who on staff needs to know a creator is coming?</span>
     <span class="why"><b>Bellacures won because “the salon expected her.”</b> Make sure the counter isn’t surprised.</span>
   </span></label></div>
 
-  <div class="q"><label><input type="checkbox" data-k="l2"><span>
-    <span class="ask">Offer cap — exactly what’s comped: drink + pastry each, for creator + friend? Bag + merch every visit or first only? Dollar cap?</span>
+  <div class="q"><label><input type="checkbox" data-k="v2"><span>
+    <span class="ask">Offer cap &amp; exclusions — exactly what’s comped per visit for creator + friend? For merch/bagged coffee: <q>a set dollar budget to choose freely, or a curated shortlist — and anything excluded?</q></span>
+    <span class="why">Katie’s budget-vs-shortlist framing (same fork as Pair). Bag + merch every visit or first only?</span>
   </span></label></div>
 
-  <div class="q"><label><input type="checkbox" data-k="l3"><span>
-    <span class="ask">Hours &amp; blackouts — avoid the morning rush? Weekdays only? Back-to-school constraints?</span>
+  <div class="q"><label><input type="checkbox" data-k="v3"><span>
+    <span class="ask">Shopify — <q>Is the shop on Shopify?</q> (Only matters if any merch/bagged coffee ships rather than being handed over in-store.)</span>
+    <span class="why">Katie’s add — confirms the integration path early instead of mid-campaign.</span>
   </span></label></div>
 
-  <div class="q"><label><input type="checkbox" data-k="l4"><span>
-    <span class="ask">Filming rules — behind the counter OK? Staff on camera? Anything not to show?</span>
+  <div class="q"><label><input type="checkbox" data-k="v4"><span>
+    <span class="ask">Location scope — single shop, or pop-ups / second location coming?</span>
   </span></label></div>
 
-  <div class="q"><label><input type="checkbox" data-k="l5"><span>
+  <div class="q"><label><input type="checkbox" data-k="v5"><span>
+    <span class="ask">First visits — when should creator visit #1 land to catch busy season?</span>
+  </span></label></div>
+
+  <h3 class="group">Communication &amp; portal</h3>
+
+  <div class="q"><label><input type="checkbox" data-k="c1"><span>
+    <span class="ask">Update cadence — <q>High-touch — an update on every creator action — or batched, only when we need something from you?</q></span>
+    <span class="why">Katie’s framing. Salon chose quick/frequent at first. Also confirm: is <b>Annie</b> the portal contact, or someone else?</span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="c2"><span>
     <span class="ask">Approval flow — she approves creators in the portal: confirm she’ll do it in-app, and how fast. Set content expectations: loose guidance, authentic recommendation-style.</span>
     <span class="why">Approval speed is the other half of “creators sent today.”</span>
   </span></label></div>
 
-  <div class="q"><label><input type="checkbox" data-k="l6"><span>
-    <span class="ask">Posting spec — IG/TikTok, tag + geo-tag the shop, and the Paid Partnership label.<span class="tag compliance">required even for gifted</span></span>
-  </span></label></div>
+  <h3 class="group">Content rights</h3>
 
-  <div class="q"><label><input type="checkbox" data-k="l7"><span>
+  <div class="q"><label><input type="checkbox" data-k="r1"><span>
     <span class="ask">Repost rights — confirm organic reshare on her socials (default). Does she want website or ads use?</span>
-    <span class="why">She cares about this most. Same defaults as Pair: 30-day site/email included; extended license optional later.</span>
+    <span class="why">She cares about this most. Same defaults as Pair: 30-day site/email included.</span>
   </span></label></div>
 
-  <div class="q"><label><input type="checkbox" data-k="l8"><span>
-    <span class="ask">Location scope — single shop, or pop-ups / second location coming?</span>
+  <div class="q"><label><input type="checkbox" data-k="r2"><span>
+    <span class="ask">Perpetual license — <q>Interested in perpetual content licenses — reactive per video after the campaign, or proactive at launch (~$75/video)?</q></span>
+    <span class="why">Katie’s add. Same menu we set with Pair — no decision needed on the call, just gauge interest.</span>
   </span></label></div>
 
-  <div class="q"><label><input type="checkbox" data-k="l9"><span>
-    <span class="ask">First visits — when should creator visit #1 land to catch busy season?</span>
+  <h3 class="group">Close</h3>
+
+  <div class="q"><label><input type="checkbox" data-k="x1"><span>
+    <span class="ask">Close — <q>Any questions for us?</q></span>
   </span></label></div>
 
   <div class="fallback"><b>If scope questions stall:</b> <q>Let’s set it up so campaign one teaches us — we stay close, then lock the rhythm by campaign two.</q> Worked on the Pair call.</div>
@@ -256,17 +295,18 @@
 
 <footer>
   Sources:
+  Katie’s question list (Aug 20, chat) ·
   <a href="https://happy-ventures.slack.com/archives/C03A1F513CN/p1784818725939179?thread_ts=1784818725.939179&amp;cid=C03A1F513CN">Tony’s sales-call recap + Benny notes (Jul 23)</a> ·
   <a href="https://happy-ventures.slack.com/archives/D0AF2JGTCF2/p1785265130759489">Julia → Katie question list (Jul 28)</a> ·
   <a href="https://happy-ventures.slack.com/archives/C0AJLR1Q8SX/p1785277594016489?thread_ts=1785277594.016489&amp;cid=C0AJLR1Q8SX">Contract terms via Benny (Jul 28)</a>
-  <br>Checkboxes save locally in this browser · prepared Aug 19, 2026 · internal only
+  <br>Checkboxes save locally in this browser · prepared Aug 19–20, 2026 · internal only
 </footer>
 
 </div>
 
 <script>
 (function(){
-  var KEY='fc-call-prep-v1';
+  var KEY='fc-call-prep-v2';
   var state={};
   try{ state=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
   var boxes=[].slice.call(document.querySelectorAll('.q input[type=checkbox]'));
