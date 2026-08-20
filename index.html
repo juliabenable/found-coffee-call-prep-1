@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Found Coffee LA — Onboarding Call Sheet</title>
+<style>
+  :root{
+    --paper:#faf6ef; --card:#ffffff; --panel:#f3ecdf;
+    --ink:#2b2118; --muted:#6f6152; --faint:#a2937f;
+    --line:#e7ddcc; --line2:#d8cbb4;
+    --accent:#b4552d; --accent-deep:#8f3f1e; --accent-soft:#f6e3d7;
+    --ok:#33691e; --ok-soft:#e8efdd;
+    --gold:#8a6d1f; --gold-soft:#f5ecd2;
+    --shadow:0 1px 2px rgba(43,33,24,.06),0 6px 22px rgba(43,33,24,.07);
+    --serif:"Iowan Old Style","Palatino","Palatino Linotype","Book Antiqua",Georgia,serif;
+    --sans:"Avenir Next","Avenir","Seravek","Segoe UI",system-ui,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1d1712; --card:#261f18; --panel:#2d251b;
+      --ink:#efe6d8; --muted:#b3a48e; --faint:#82755f;
+      --line:#3a3123; --line2:#4a3f2d;
+      --accent:#e08a5c; --accent-deep:#f0a97f; --accent-soft:#3c2a1d;
+      --ok:#9bc47e; --ok-soft:#26301c;
+      --gold:#d8b95a; --gold-soft:#352c15;
+      --shadow:none;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1d1712; --card:#261f18; --panel:#2d251b;
+    --ink:#efe6d8; --muted:#b3a48e; --faint:#82755f;
+    --line:#3a3123; --line2:#4a3f2d;
+    --accent:#e08a5c; --accent-deep:#f0a97f; --accent-soft:#3c2a1d;
+    --ok:#9bc47e; --ok-soft:#26301c;
+    --gold:#d8b95a; --gold-soft:#352c15;
+    --shadow:none;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0; background:var(--paper); color:var(--ink);
+    font:15.5px/1.6 var(--sans); -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(43,33,24,.035) 1px, transparent 1px);
+    background-size:22px 22px;}
+  .wrap{max-width:880px; margin:0 auto; padding:44px 24px 90px;}
+
+  header{border-bottom:3px double var(--line2); padding-bottom:24px; margin-bottom:8px;}
+  .eyebrow{font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;}
+  h1{font-family:var(--serif); font-size:clamp(34px,6vw,46px); line-height:1.05; font-weight:600; letter-spacing:-.01em; margin:0;}
+  h1 em{font-style:italic; color:var(--accent-deep);}
+  .when{display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:14px; font-size:14px; color:var(--muted);}
+  .when b{color:var(--ink); font-weight:600;}
+  .chips{display:flex; flex-wrap:wrap; gap:7px; margin-top:16px;}
+  .chip{font-size:12px; font-weight:600; border:1px solid var(--line2); border-radius:999px;
+    padding:4px 11px; background:var(--card); color:var(--muted); white-space:nowrap;}
+  .chip.hot{background:var(--accent-soft); border-color:transparent; color:var(--accent-deep);}
+
+  .goal{margin:20px 0 0; padding:13px 16px; background:var(--gold-soft); border-left:3px solid var(--gold);
+    border-radius:0 10px 10px 0; font-size:14.5px; color:var(--ink);}
+  .goal b{color:var(--gold);}
+
+  .progress{position:sticky; top:0; z-index:5; margin:26px -24px 0; padding:9px 24px;
+    background:color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line); display:flex; align-items:center; gap:12px; font-size:12.5px; color:var(--muted);}
+  .progress .bar{flex:1; height:4px; background:var(--line); border-radius:99px; overflow:hidden;}
+  .progress .fill{height:100%; width:0%; background:var(--accent); border-radius:99px; transition:width .35s ease;}
+  .progress b{color:var(--ink); font-variant-numeric:tabular-nums;}
+  .progress button{font:inherit; color:var(--faint); background:none; border:none; cursor:pointer; padding:2px 4px;}
+  .progress button:hover{color:var(--accent-deep); text-decoration:underline;}
+
+  section{margin-top:44px; animation:rise .5s ease both;}
+  section:nth-of-type(2){animation-delay:.06s}
+  section:nth-of-type(3){animation-delay:.12s}
+  section:nth-of-type(4){animation-delay:.18s}
+  @keyframes rise{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
+  @media (prefers-reduced-motion: reduce){ section{animation:none} }
+
+  h2{font-family:var(--serif); font-size:24px; font-weight:600; letter-spacing:-.005em; margin:0 0 4px;
+    display:flex; align-items:baseline; gap:10px;}
+  h2 .no{font-size:13px; font-family:var(--sans); font-weight:700; color:var(--accent); letter-spacing:.08em;}
+  .sub{font-size:13.5px; color:var(--muted); margin:0 0 16px; max-width:64ch;}
+
+  /* don't re-ask panel */
+  .panel{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px 20px 8px;}
+  .fact{display:grid; grid-template-columns:118px 1fr; gap:14px; padding:10px 0; border-top:1px dashed var(--line2); font-size:14.5px;}
+  .fact:first-of-type{border-top:none}
+  .fact dt{font-size:11.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--accent-deep); padding-top:2px;}
+  .fact dd{margin:0; color:var(--ink);}
+  .fact dd i{color:var(--muted);}
+  @media (max-width:560px){ .fact{grid-template-columns:1fr; gap:2px;} }
+
+  /* question cards */
+  .q{display:grid; grid-template-columns:30px 1fr; gap:14px; background:var(--card); border:1px solid var(--line);
+    border-radius:14px; padding:15px 18px; margin-bottom:10px; box-shadow:var(--shadow); transition:opacity .25s;}
+  .q label{display:contents; cursor:pointer;}
+  .q input{appearance:none; width:22px; height:22px; margin-top:2px; border:2px solid var(--line2); border-radius:7px;
+    background:var(--card); cursor:pointer; position:relative; transition:.15s;}
+  .q input:hover{border-color:var(--accent)}
+  .q input:checked{background:var(--accent); border-color:var(--accent);}
+  .q input:checked::after{content:""; position:absolute; left:6px; top:2px; width:5px; height:11px;
+    border:solid #fff; border-width:0 2.5px 2.5px 0; transform:rotate(42deg);}
+  .q input:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  .q .ask{font-size:15.5px; font-weight:600; line-height:1.45;}
+  .q .ask q{font-style:italic; font-family:var(--serif); font-weight:500; quotes:"“" "”";}
+  .q .why{font-size:13.5px; color:var(--muted); margin-top:4px; line-height:1.55;}
+  .q .why b{color:var(--ink); font-weight:600;}
+  .q.done{opacity:.45}
+  .q.done .ask{text-decoration:line-through; text-decoration-color:var(--faint); text-decoration-thickness:1px;}
+
+  .tag{display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+    border-radius:5px; padding:2px 7px; margin-left:8px; vertical-align:2px;}
+  .tag.unblocks{background:var(--ok-soft); color:var(--ok);}
+  .tag.compliance{background:var(--accent-soft); color:var(--accent-deep);}
+
+  .fallback{margin-top:16px; padding:14px 18px; border:1px dashed var(--line2); border-radius:12px;
+    font-size:14px; color:var(--muted); background:var(--card);}
+  .fallback b{color:var(--ink);}
+  .fallback q{font-family:var(--serif); font-style:italic; color:var(--ink); quotes:"“" "”";}
+
+  footer{margin-top:52px; padding-top:16px; border-top:1px solid var(--line); font-size:12.5px; color:var(--faint); line-height:1.9;}
+  footer a{color:var(--muted); text-underline-offset:3px; text-decoration-color:var(--line2);}
+  footer a:hover{color:var(--accent-deep); text-decoration-color:var(--accent-deep);}
+
+  @media print{
+    body{background:none; font-size:12px;}
+    .progress{display:none}
+    .q{box-shadow:none; break-inside:avoid; padding:8px 12px; margin-bottom:6px;}
+    section{margin-top:22px; animation:none;}
+    header{padding-bottom:12px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Brand Portal · Onboarding Call Sheet</div>
+  <h1>Found Coffee <em>LA</em></h1>
+  <div class="when">
+    <span><b>Thu Aug 20 · 9:30am PT</b> (12:30pm ET)</span>
+    <span>with <b>Annie Choi</b>, owner</span>
+    <span>1355 Colorado Blvd · Eagle Rock</span>
+    <span>on the call: Julia · Tony · Katie</span>
+  </div>
+  <div class="chips">
+    <span class="chip hot">Local experience collab</span>
+    <span class="chip">$149/mo Preferred Partner <s style="color:var(--faint)">$199</s></span>
+    <span class="chip">3 creators / month</span>
+    <span class="chip">12-mo term · cancel window ends mo. 3</span>
+    <span class="chip">Signed Jul 27 · Paid Aug 17</span>
+    <span class="chip">First campaign live in portal</span>
+  </div>
+  <p class="goal"><b>Goal of this call:</b> lock creator fit + visit logistics so Katie can send the first creators <b>today</b> — Logan is pre-matching now. She wants to catch busy season, which starts next month.</p>
+</header>
+
+<div class="progress" id="progress">
+  <span><b id="count">0</b>/<span id="total">0</span> covered</span>
+  <div class="bar"><div class="fill" id="fill"></div></div>
+  <button type="button" id="reset" title="Uncheck everything">reset</button>
+</div>
+
+<section>
+  <h2><span class="no">01</span> Don’t re-ask — she already told Tony</h2>
+  <p class="sub">Reference these so we sound like we listened. From Tony’s Jul 23 sales call.</p>
+  <div class="panel">
+    <dl style="margin:0">
+      <div class="fact"><dt>Offer shape</dt><dd>Coffee + pastry for creator <b>+ a friend</b>, plus bagged coffee &amp; merch (shirts, mugs, snack items) — <i>“all of that would be great.”</i></dd></div>
+      <div class="fact"><dt>Creator lane</dt><dd>East-side LA / Eagle Rock coffee + food + neighborhood-discovery creators. Her reference point: the <i>“six coffee shops you need to visit in LA”</i> style creator.</dd></div>
+      <div class="fact"><dt>Timing</dt><dd>Busy season starts next month — back-to-school, families home from camps. She wants to catch it.</dd></div>
+      <div class="fact"><dt>Her mindset</dt><dd>Came in skeptical of influencer ROI (won’t pay for Yelp/Google ads). Won over by: <b>repostable content · hours saved · creator relationships · always-on program</b>. Post-demo: “this is incredible.” Loves being the <b>first LA coffee shop</b> on Benable.</dd></div>
+      <div class="fact"><dt>⚠ Not Toronto</dt><dd>Found Coffee Toronto is a name copycat — briefs, sourcing, and AI context must say <b>Found Coffee LA</b>.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <h2><span class="no">02</span> The six core questions</h2>
+  <p class="sub">Reused from the Blow Me Away onboarding — they worked. Adapted for coffee.</p>
+
+  <div class="q"><label><input type="checkbox" data-k="q1"><span>
+    <span class="ask">1 · Past partnerships — <q>Have you worked with influencers before? What did that look like for you?</q></span>
+    <span class="why">She said solicitations come in and ROI never showed. Ask what she actually tried, so we know what “better” looks like to her.</span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="q2"><span>
+    <span class="ask">2 · Biggest pain — <q>What’s the biggest pain we can take off your plate?</q></span>
+    <span class="why">Salon answers were contracts, scheduling back-and-forth, chasing content.</span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="q3"><span>
+    <span class="ask">3 · Creator openness — <q>Coffee &amp; food creators only, or lifestyle and neighborhood-discovery more generally? Walk me through everything you’d be open to.</q><span class="tag unblocks">unblocks matching</span></span>
+    <span class="why">Confirm the east-side / Eagle Rock lane + any no-gos. <b>This answer lets Katie send creators today.</b></span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="q4"><span>
+    <span class="ask">4 · Success — recap what we heard, then: <q>Is there anything else that would make this a magic experience?</q></span>
+    <span class="why">Recap in her words: repostable content, hours saved, relationships, always-on program.</span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="q5"><span>
+    <span class="ask">5 · Communication — <q>Would you rather get an email every time content posts, or batched updates?</q></span>
+    <span class="why">Salon chose quick/frequent at first. Also confirm: is <b>Annie</b> the portal contact, or someone else?</span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="q6"><span>
+    <span class="ask">6 · Close — <q>Any questions for us?</q></span>
+  </span></label></div>
+</section>
+
+<section>
+  <h2><span class="no">03</span> Local-experience logistics</h2>
+  <p class="sub">The coffee version of the salon questions — where local collabs actually hit friction.</p>
+
+  <div class="q"><label><input type="checkbox" data-k="l1"><span>
+    <span class="ask">Visit mechanics — walk in and mention Benable, or book a slot? Who on staff needs to know a creator is coming?</span>
+    <span class="why"><b>Bellacures won because “the salon expected her.”</b> Make sure the counter isn’t surprised.</span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="l2"><span>
+    <span class="ask">Offer cap — exactly what’s comped: drink + pastry each, for creator + friend? Bag + merch every visit or first only? Dollar cap?</span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="l3"><span>
+    <span class="ask">Hours &amp; blackouts — avoid the morning rush? Weekdays only? Back-to-school constraints?</span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="l4"><span>
+    <span class="ask">Filming rules — behind the counter OK? Staff on camera? Anything not to show?</span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="l5"><span>
+    <span class="ask">Approval flow — she approves creators in the portal: confirm she’ll do it in-app, and how fast. Set content expectations: loose guidance, authentic recommendation-style.</span>
+    <span class="why">Approval speed is the other half of “creators sent today.”</span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="l6"><span>
+    <span class="ask">Posting spec — IG/TikTok, tag + geo-tag the shop, and the Paid Partnership label.<span class="tag compliance">required even for gifted</span></span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="l7"><span>
+    <span class="ask">Repost rights — confirm organic reshare on her socials (default). Does she want website or ads use?</span>
+    <span class="why">She cares about this most. Same defaults as Pair: 30-day site/email included; extended license optional later.</span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="l8"><span>
+    <span class="ask">Location scope — single shop, or pop-ups / second location coming?</span>
+  </span></label></div>
+
+  <div class="q"><label><input type="checkbox" data-k="l9"><span>
+    <span class="ask">First visits — when should creator visit #1 land to catch busy season?</span>
+  </span></label></div>
+
+  <div class="fallback"><b>If scope questions stall:</b> <q>Let’s set it up so campaign one teaches us — we stay close, then lock the rhythm by campaign two.</q> Worked on the Pair call.</div>
+</section>
+
+<footer>
+  Sources:
+  <a href="https://happy-ventures.slack.com/archives/C03A1F513CN/p1784818725939179?thread_ts=1784818725.939179&amp;cid=C03A1F513CN">Tony’s sales-call recap + Benny notes (Jul 23)</a> ·
+  <a href="https://happy-ventures.slack.com/archives/D0AF2JGTCF2/p1785265130759489">Julia → Katie question list (Jul 28)</a> ·
+  <a href="https://happy-ventures.slack.com/archives/C0AJLR1Q8SX/p1785277594016489?thread_ts=1785277594.016489&amp;cid=C0AJLR1Q8SX">Contract terms via Benny (Jul 28)</a>
+  <br>Checkboxes save locally in this browser · prepared Aug 19, 2026 · internal only
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var KEY='fc-call-prep-v1';
+  var state={};
+  try{ state=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+  var boxes=[].slice.call(document.querySelectorAll('.q input[type=checkbox]'));
+  var count=document.getElementById('count'), total=document.getElementById('total'), fill=document.getElementById('fill');
+  total.textContent=boxes.length;
+  function paint(){
+    var n=0;
+    boxes.forEach(function(b){
+      b.closest('.q').classList.toggle('done', b.checked);
+      if(b.checked) n++;
+    });
+    count.textContent=n;
+    fill.style.width=(boxes.length? (n/boxes.length*100):0)+'%';
+  }
+  boxes.forEach(function(b){
+    b.checked=!!state[b.dataset.k];
+    b.addEventListener('change',function(){
+      state[b.dataset.k]=b.checked;
+      try{ localStorage.setItem(KEY,JSON.stringify(state)); }catch(e){}
+      paint();
+    });
+  });
+  document.getElementById('reset').addEventListener('click',function(){
+    state={};
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    boxes.forEach(function(b){ b.checked=false; });
+    paint();
+  });
+  paint();
+})();
+</script>
+</body>
+</html>
